@@ -3,4 +3,4 @@
 Docker Compose on Windows
 - Python
 - Checkmk
-- Ansible
+- Ubuntu (SSH and Ansible)
