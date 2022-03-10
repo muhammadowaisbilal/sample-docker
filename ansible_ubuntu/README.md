@@ -2,7 +2,7 @@
 
 NOTE: THIS IMAGE IS TO BE USED FOR TEST AND LEARNIGN PURPOSES ONLY! NOT TO BE USED IN A PRODUCTION ENVIRONMENT!
 
-SSH Enabled Ubuntu Image for Test and Dev purposes ONLY!
+SSH Enabled Ubuntu and Ansible
 
 ## Use:
 Pull Ubuntu image
@@ -24,8 +24,8 @@ Run Ubuntu container named 'ansible_slave' in iteractive mode and detach mode to
 ### Master
 
 Install following
-```apt-get update```
-```apt-get install --yes python ansible openssh-client vim iputils-ping```
+- ```apt-get update```
+- ```apt-get install --yes python ansible openssh-client vim iputils-ping```
 
 Generate SSH Key
 ```ssh-keygen```
@@ -36,8 +36,9 @@ where 172.17.0.2 is the IP Address of ansible_slave
 
 Add ip to the ansible host
 ```vim /etc/ansible/hosts```
-    `[machine]`
-    `172.17.0.2`
+
+    [machine]
+    172.17.0.2
 
 Testing if ansible is communicating with its slave using ping module(-m)
  ```ansible -m ping 172.17.0.2```
@@ -46,8 +47,8 @@ Testing if ansible is communicating with its slave using ping module(-m)
 
 Install following
 
-```apt-get update```
-```apt-get install --yes python ssh vim ```
+- ```apt-get update```
+- ```apt-get install --yes python ssh vim ```
 
 Set password
 
@@ -62,9 +63,9 @@ Permit Root Login
 Uncommit 
 ```#PermitRootLogin prohibit-password```
 to
-```PermitRootLogin yes```
-```service ssh restart```
-```service ssh start```
+- ```PermitRootLogin yes```
+- ```service ssh restart```
+- ```service ssh start```
 
 # Useful commands
 - Get ipaddress of networks/container on birdge
