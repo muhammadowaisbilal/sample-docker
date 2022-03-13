@@ -72,7 +72,7 @@ Ansible provides a no_log parameter for tasks that protects sensitive data:
 # Reference
 - https://www.redhat.com/sysadmin/introduction-ansible-vault
 - https://www.redhat.com/sysadmin/ansible-playbooks-secrets
-- https://www.redhat.com/sysadmin/ansible-playbooks-secrets
+- https://www.cloudbees.com/blog/how-to-keep-your-playbooks-secure-with-ansible-vault
 
 
 
