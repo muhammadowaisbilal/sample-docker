@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+    # The existing database container configuration...
+    # https://www.twilio.com/blog/get-started-docker-laravel
+
+    # $ a2enmod rewrite
+    # Enabling module rewrite.
+    # To activate the new configuration, you need to run:
+    # $ service apache2 restart
+  php-apache:
+    container_name: php-apache
+    build:
+      context: .
+    ports:
+        - '8080:80'
+    volumes:
+      - .:/var/www/laravel_docker
+      - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+
