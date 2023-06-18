@@ -7,19 +7,27 @@ SSH Enabled Ubuntu and Ansible
 ## Use:
 Pull Ubuntu image
 
-```docker pull ubuntu```
+```
+docker pull ubuntu
+```
 
 Run Ubuntu container named 'ansible_master' in iteractive mode and detach mode to run /bin/bash :
 
-```docker run -itd --name ansible_master ubuntu /bin/bash```
+```
+docker run -itd --name ansible_master ubuntu /bin/bash
+```
 
 Go into docker created
 
-```docker attach <container-id>```
+```
+docker attach <container-id>
+```
 
 Run Ubuntu container named 'ansible_slave' in iteractive mode and detach mode to run /bin/bash :
 
-```docker run -itd --name ansible_slave ubuntu /bin/bash```
+```
+docker run -itd --name ansible_slave ubuntu /bin/bash
+```
 
 ### Master
 
@@ -52,16 +60,24 @@ Install following
 
 Set password
 
-```passwd root```
+```
+passwd root
+```
 
 I wil be using `ansible123`
 
 Permit Root Login
 
-```vim /etc/ssh/sshd_config```
+```
+vim /etc/ssh/sshd_config
+```
 
 Uncommit 
-```#PermitRootLogin prohibit-password```
+
+```
+# PermitRootLogin prohibit-password
+```
+
 to
 - ```PermitRootLogin yes```
 - ```service ssh restart```
