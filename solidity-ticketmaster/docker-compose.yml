@@ -1,0 +1,15 @@
+services:
+  ticketmaster:
+    #image: "node:latest"
+    image: "ticket-master"
+    user: "node"
+    working_dir: /app/ticketmaster
+
+    volumes:
+      - ./ticketmaster:/app/ticketmaster
+
+    #command: npm install --save-dev hardhat && npx hardhat test
+    command: npx hardhat test
+
+volumes:
+  ticketmaster:
