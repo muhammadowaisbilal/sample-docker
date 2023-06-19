@@ -7,13 +7,13 @@ The core intent is to work with Solidity (Block Chain). The tutorial I will be f
 
 Before getting started, download the latest [Docker Desktop](https://www.docker.com/products/docker-desktop/) and install it.
 
-##Using Dockerfile
+## Using Dockerfile
 Follow the each steps below:
 
 Pulling the Node image. Enter `docker pull node:latest`. I will be using `node:19-bullseye` based upon the Docker tutorial page reference below.
 
 
-###Dockerfile
+### Dockerfile
 
 Create a file in your local directory - `Dockerfile` and past the below code in the file.
 
@@ -83,7 +83,7 @@ Before doing anything just run the following command.
 # npx hardhat test
 ```
 
-###Docker Compose file
+### Docker Compose file
 Create a `docker-compose.yml` file locally along side of the `Dockerfile`. Copy past the following in the `docker-compose.yml` file.
 
 ```
@@ -116,7 +116,7 @@ Since, our `docker-compose.yml` file already include to run our test, the result
 
 #Useful commands
 
-##NodeJS
+## NodeJS
 **Check Node version**
 
 ```
@@ -129,7 +129,7 @@ To address all issues (including breaking changes), run:
 # npm audit fix --force
 ```
 
-##Hardhat
+## Hardhat
 **Installing Hardhat plugins**
 
 ```
@@ -148,7 +148,7 @@ To address all issues (including breaking changes), run:
 ```
 
 
-##Reference
+## Reference
 * [How to Use the Node Docker Official Image](https://www.docker.com/blog/how-to-use-the-node-docker-official-image/)
 
 * Final Code [Ticket Master Solidity App](https://github.com/dappuniversity/tokenmaster)
