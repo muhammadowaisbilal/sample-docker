@@ -21,9 +21,9 @@ docker run -itd --name ansible_master ubuntu /bin/bash
 
 When you run the docker attach command, it attaches your current terminal session to the input and output streams of the specified container. This means that you can see the container's console output and interact with its command prompt as if you were directly connected to it.
 
-It's important to note that attaching to a container with docker attach is different from running a new shell session inside the container using docker exec -it. When you attach to a container, you connect to the main process running in the container, typically the process that was specified when the container was created.
+It's important to note that attaching to a container with ``docker attach`` is different from running a new shell session inside the container using ``docker exec -it``. When you attach to a container, you connect to the main process running in the container, typically the process that was specified when the container was created.
 
-To detach from a container without stopping it, you can use the key combination Ctrl + P followed by Ctrl + Q. This detaches your terminal from the container while leaving the container running in the background.
+To detach from a container without stopping it, you can use the key combination ``Ctrl + P`` followed by ``Ctrl + Q``. This detaches your terminal from the container while leaving the container running in the background.
 
 ```
 docker attach <container-id>
