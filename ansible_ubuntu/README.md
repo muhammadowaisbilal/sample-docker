@@ -1,29 +1,35 @@
 # ubuntu-ssh-enabled
 
-NOTE: THIS IMAGE IS TO BE USED FOR TEST AND LEARNIGN PURPOSES ONLY! NOT TO BE USED IN A PRODUCTION ENVIRONMENT!
+NOTE: THIS IMAGE IS TO BE USED FOR TEST AND LEARNING PURPOSES ONLY! NOT TO BE USED IN A PRODUCTION ENVIRONMENT!
 
 SSH Enabled Ubuntu and Ansible
 
-## Use:
+## Use
 Pull Ubuntu image
 
 ```
 docker pull ubuntu
 ```
 
-Run Ubuntu container named 'ansible_master' in iteractive mode and detach mode to run /bin/bash :
+Run the Ubuntu container named 'ansible_master' in interactive mode and detach mode to run /bin/bash :
 
 ```
 docker run -itd --name ansible_master ubuntu /bin/bash
 ```
 
-Go into docker created
+**Go into docker created**
+
+When you run the docker attach command, it attaches your current terminal session to the input and output streams of the specified container. This means that you can see the container's console output and interact with its command prompt as if you were directly connected to it.
+
+It's important to note that attaching to a container with docker attach is different from running a new shell session inside the container using docker exec -it. When you attach to a container, you connect to the main process running in the container, typically the process that was specified when the container was created.
+
+To detach from a container without stopping it, you can use the key combination Ctrl + P followed by Ctrl + Q. This detaches your terminal from the container while leaving the container running in the background.
 
 ```
 docker attach <container-id>
 ```
 
-Run Ubuntu container named 'ansible_slave' in iteractive mode and detach mode to run /bin/bash :
+Run the Ubuntu container named 'ansible_slave' in interactive mode and detach mode to run /bin/bash :
 
 ```
 docker run -itd --name ansible_slave ubuntu /bin/bash
@@ -64,7 +70,7 @@ Set password
 passwd root
 ```
 
-I wil be using `ansible123`
+I will be using `ansible123`
 
 Permit Root Login
 
