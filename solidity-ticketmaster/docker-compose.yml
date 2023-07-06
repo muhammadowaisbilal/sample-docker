@@ -1,7 +1,9 @@
 services:
   ticketmaster:
     #image: "node:latest"
-    image: "ticket-master"
+    #image: "ticket-master"
+    image: "mysolidity-packageonly"
+    #image: "mysolidity-catlock"
     user: "node"
     working_dir: /app/ticketmaster
 
@@ -10,6 +12,9 @@ services:
 
     #command: npm install --save-dev hardhat && npx hardhat test
     command: npx hardhat test
+    #ticketmaster\node_modules\.package-lock.json
+    #command: cat /app/ticketmaster/package-lock.json && npx hardhat test
+
 
 volumes:
   ticketmaster:
