@@ -12,6 +12,7 @@ Docker Compose on Windows
 - Wordpress testwp
 - Laravel Ubuntu
 - Node JS
+- Mongo-Express
 
 ## Local Working Directory
 To bring your code from container to local working directory use volumes with first parameter point to local directory:
