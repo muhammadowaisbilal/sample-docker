@@ -1,12 +1,14 @@
 version: '3.7'
 
+name: lms_elemontor
+
 services:
 
-  wordpress:
-    image: wordpress:latest
+  wplms:
+    image: wordpress
     restart: always
     ports:
-      - 8080:80
+      - 8081:80
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
@@ -14,10 +16,10 @@ services:
       WORDPRESS_DB_NAME: exampledb
       # WP Login: user/wordpress
     volumes:
-      - wordpress:/var/www/html
+      - wordpress_lms:/var/www/html
 
-  db:
-    image: mysql:latest
+  dblms:
+    image: mysql:5.7
     restart: always
     environment:
       MYSQL_DATABASE: exampledb
@@ -25,8 +27,8 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
+      - db_lms:/var/lib/mysql
 
 volumes:
-  wordpress:
-  db:
+  wordpress_lms:
+  db_lms:
