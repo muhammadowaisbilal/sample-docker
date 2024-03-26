@@ -28,7 +28,12 @@ var limiter = RateLimit({
 app.use(limiter);
 
 app.get('/:path', function(req, res) {
-  let path = req.params.path;
+  //let path = req.params.path;
+  
+  // Normalize the path and resolve it against the base directory
+  //  filePath = path.resolve('/base/directory', filePath);
+  let path = path.resolve('', req.params.path);
+
   if (isValidPath(path))
     res.sendFile(path);
 });
