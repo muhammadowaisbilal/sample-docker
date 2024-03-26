@@ -13,9 +13,25 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
+//app.get('/', function (req, res) {
+//    res.sendFile(path.join(__dirname, "index.html"));
+//  });
+
+// set up rate limiter: maximum of five requests per minute
+var RateLimit = require('express-rate-limit');
+var limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
+
+// apply rate limiter to all requests
+app.use(limiter);
+
+app.get('/:path', function(req, res) {
+  let path = req.params.path;
+  if (isValidPath(path))
+    res.sendFile(path);
+});
 
 // when starting app locally, use "mongodb://admin:password@localhost:27017" URL instead
 let mongoUrlDockerCompose = `mongodb://${DB_USER}:${DB_PASS}@mongodb`;
